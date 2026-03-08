@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* Colors - Futuristic Game/AI Theme (Dark, Serious, Subtle) */
+  --bg-primary: #0b0c10; /* Deepest Void */
+  --bg-secondary: #1f2833; /* Dark Slate */
+  --bg-card: rgba(31, 40, 51, 0.7); /* Glassy Card */
+  --bg-overlay: rgba(11, 12, 16, 0.85);
+
+  --text-primary: #c5c6c7; /* Light Gray - Readable */
+  --text-secondary: #66fcf1; /* Cyan Pop - Use sparingly */
+  --text-muted: #8b9bb4;
+
+  --accent-cyan: #45a29e; /* Muted Cyan */
+  --accent-neon: #66fcf1; /* Bright Neon - Hover/Active only */
+  --accent-violet: #a78bfa; /* Violet */
+  --accent-success: #4caf50;
+  --accent-danger: #f44336;
+  --accent-gold: #ffd700;
+
+  --border-color: #45a29e; /* Subtle borders */
+
+  /* Spacing & Layout */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+
+  /* Shadow & Glow */
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glow-text: 0 0 10px rgba(102, 252, 241, 0.5);
+  --glow-box: 0 0 15px rgba(69, 162, 158, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes bgAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  /* Premium Dark Theme - Color Based */
+  background: linear-gradient(135deg, #0b0c10 0%, #1f2833 50%, #0b0c10 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+}
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Enhanced Buttons - Bigger & Vibe with BG */
+button {
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  padding: 1rem 2rem; /* Bigger default padding */
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05); /* Glassy default */
+  backdrop-filter: blur(5px);
+  color: var(--accent-cyan);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: width 0.4s ease;
+  z-index: -1;
+  transform: skewX(-20deg);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(69, 162, 158, 0.4);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+button:hover::before {
+  width: 150%;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Button Variants */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+  color: #fff;
+  border: 1px solid var(--accent-cyan);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+  box-shadow: 0 0 20px rgba(69, 162, 158, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(102, 252, 241, 0.15);
+  color: var(--accent-cyan);
+  border: 2px solid rgba(102, 252, 241, 0.4);
+}
+
+.btn-secondary:hover {
+  background: rgba(102, 252, 241, 0.25);
+  border-color: var(--accent-neon);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+}
+
+/* Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Glassmorphism Card */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-cyan);
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  font-family: "Inter", sans-serif;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-neon);
+  box-shadow: var(--glow-box);
+  outline: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  /* Make tables horizontally scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Responsive table cells */
+  th,
+  td {
+    padding: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .card {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  th,
+  td {
+    padding: 0.4rem !important;
+    font-size: 0.75rem !important;
+  }
+}

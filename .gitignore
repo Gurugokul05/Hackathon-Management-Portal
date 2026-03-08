@@ -1,0 +1,42 @@
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env*.local
+*.env
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+
+# Uploads (if you want to exclude uploaded files from git)
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/uploads/gallery/*
+!backend/uploads/gallery/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
