@@ -164,7 +164,6 @@ This platform provides end-to-end hackathon management capabilities for organize
 
 ```bash
 git clone https://github.com/Gurugokul05/Hackathon-Management-Portal.git
-cd ai
 ```
 
 ### 2. Backend Setup
