@@ -58,7 +58,7 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 1. Clone your fork:
 
    ```bash
-   git clone https://github.com/your-username/repo.git
+   git clone https://github.com/Gurugokul05/Hackathon-Management-Portal.git
    ```
 
 2. Install dependencies:
