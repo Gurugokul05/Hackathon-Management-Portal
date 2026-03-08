@@ -10,7 +10,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/yourusername/repo/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/gurugokul05/Hackathon-Management-Portal/graphs/commit-activity)
 
 </div>
 
@@ -163,7 +163,7 @@ This platform provides end-to-end hackathon management capabilities for organize
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Gurugokul05/Hackathon-Management-Portal.git
 cd ai
 ```
 
@@ -642,6 +642,6 @@ If you discover a security vulnerability, please email security@example.com inst
 
 Made with ❤️ for Hackathon Organizers
 
-[Report Bug](https://github.com/yourusername/repo/issues) · [Request Feature](https://github.com/yourusername/repo/issues) · [Documentation](https://github.com/yourusername/repo/wiki)
+[Report Bug](https://github.com/gurugokul05/Hackathon-Management-Portal/issues) · [Request Feature](https://github.com/gurugokul05/Hackathon-Management-Portal/issues) · [Documentation](https://github.com/gurugokul05/Hackathon-Management-Portal/wiki)
 
 </div>
